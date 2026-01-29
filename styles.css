@@ -1,13 +1,61 @@
-*{
-  --primary-color: #ffffff;
-  --media-gap: 20px;
+:root {
+  /* COLORS BASE */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #0a0a0a;
+
+  --color-gray-100: #f8f8f8;
+  --color-gray-200: #f0f0f0;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #c0bfbf;
+  --color-gray-500: #444444;
+
+  /* SEMANTIC COLORS */
+  --color-primary: var(--color-black);
+  --text-main: var(--color-black);
+  --text-muted: var(--color-gray-500);
+
+  --bg-main: var(--color-gray-200);
+  --bg-card: var(--color-gray-100);
+  --bg-dark: var(--color-dark);
+
+  /* OVERLAYS */
+  --overlay-dark: rgba(0,0,0,0.5);
+  --overlay-mid: rgba(104,103,103,0.4);
+  --overlay-light: rgba(214,212,212,0.67);
+
+  /* SHADOWS */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+
+  /* SPACING */
+  --space-xs: 10px;
+  --space-sm: 15px;
+  --space-md: 20px;
+  --space-lg: 25px;
+  --space-xl: 30px;
+
+  /* RADIUS */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 30px;
 }
 
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+}
 
 .top {
     display: flex;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: var(--space-sm) var(--space-lg);
 }
 
 
@@ -16,9 +64,9 @@
 }
 
 li {
-    color: rgb(0, 0, 10);
-    display:inline;
-    margin-right: 20px; 
+    color: var(--text-main);
+    display: inline;
+    margin-right: var(--space-md);
 }
 .menu-btn {
   display: none;
@@ -31,7 +79,7 @@ li {
     display: block;
     color: black;
     order: 2;
-    margin: 25px;
+    margin: var(--space-lg);
   }
   .navigation  {
     display: none;
@@ -41,7 +89,7 @@ li {
 }
 
 .icon-btn {
-    background-color: var(--background-color, transparent);
+    background: transparent;  
     border: none
 }
 
@@ -53,7 +101,7 @@ li {
 .buttons {
     display: flex;
     margin-left: auto;
-    gap: 25px;
+    gap: var(--space-md);
     
 }
 
@@ -77,7 +125,7 @@ li {
     transform: translateX(-50%);
     text-align: center;
     color: var(--primary-color);
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    text-shadow: var(--primary-color);
     width: 90%;
     padding: 0 1rem;
 }
@@ -107,15 +155,15 @@ li {
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    gap: 2rem;
-    padding: 2rem;
+    gap: var(--space-md);
+    padding: var(--space-lg);
 }
 
 .card {
-    background: var(--background-color, rgb(252, 251, 251));
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: var(--bg-card);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     position: relative;
     transition: transform 0.2s ease;
 }
@@ -132,7 +180,7 @@ li {
 
 .model {
     margin-top: 5px;
-    color: #444;
+    color: var(--text-muted);
 }
 
 .car-img {
@@ -142,19 +190,19 @@ li {
 
 .info-btn {
     border: none;
-    background: var(--background-color, rgb(248, 247, 247));
-    padding: 10px 18px;
-    border-radius: 20px;
+    background: var(--bg-main);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    color: #000;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-main);
     text-decoration: none;
 }
 
 .colors {
     display: flex;
-    gap: 12px;
-    margin-top: 20px;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
 }
 
 .color {
@@ -216,48 +264,48 @@ li {
 }
 
 .mensaje {
-    padding: 70px;
-    background: var(--background-color, rgba(214, 212, 212, 0.671));
-    color: #000;
+    padding: var(--space-lg);
+    background: var(--bg-main);
+    color: var(--text-main);
     
 }
 
 .mensaje-text h1 {
-    font-size: 3.6rem;
-    font-weight: 400;
+    font-size: var(--font-size-xl, 2.5rem);
+    font-weight: var(--font-weight-bold, 700);
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-md, 20px);
 }
 
 .mensaje-text p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #444;
+    color: var(--text-muted);
 }
 
 .overlay-box {
     position: absolute;
     top: 20%;
     left: 10%;
-    background: var(--background-color, rgba(104, 103, 103, 0.404));
-    padding: 30px 35px;
-    border-radius: 12px;
-    color: var(--primary-color);
+    background: var(--overlay-mid);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
     max-width: 280px;
 }
 
 .overlay-box h2 {
     font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 400;
+    margin-bottom: var(--space-md);
+    font-weight: var(--font-weight-normal, 400);
 }
 
 .overlay-box button {
-    padding: 10px 20px;
+    padding: var(--space-xs) var(--space-md);
     font-size: 0.9rem;
-    background: var(--background-color, rgb(248, 248, 248));
-    color: black;
+    background: var(--bg-main);
+    color: var(--text-main);
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -290,34 +338,34 @@ li {
 }
 
 .gallery {
-  border-radius: 20px;
+  border-radius: var(--radius-md, 12px);
   width: 100%;
-  padding: 15px;
+  padding: var(--space-md);
   box-sizing: border-box;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-sm);
   text-align: center;
-  background: var(--background-color, rgb(192, 191, 191));
+  background: var(--bg-card);
 }
 
 
 .gallery img {
   width: 100%;
   height: 150px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 
 .gallery h3 {
   margin: 10px 0 12px 0;
   font-weight: normal;
-  color: black;
+  color: var(--text-main);
 }
 
 .btn {
-  background: var(--background-color, rgb(192, 191, 191));
+  background: var(--bg-main);
   border: none;
-  padding: 7px 15px;
+  padding: var (--space-xs) var(--space-md);
   font-size: 14px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
@@ -370,8 +418,8 @@ li {
 
 body {
   margin: 0;
-  background-color: var(--background-color, rgb(192, 191, 191));
-  color: #eee;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.4;
 }
@@ -381,12 +429,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--background-color, rgb(7, 7, 7));
+  background-color: var(--bg-dark);
   width: 100%;
 }
 
 .join-title {
-  color: rgb(250, 248, 248);
+  color: var(--color-white);
   display: block;
   margin-top: 50%;
   font-size: 150%;
@@ -396,18 +444,18 @@ body {
 
 .subtitle {
   display: block;
-  color: rgb(250, 248, 248);
-  opacity: 0,7;
+  color: var(--text-muted);
+  opacity: 0.7;
   font-size: 100%;
   text-align: center;
 }
 
 .input-box {
   margin: 25px auto;
-  background: #fff;
+  background: var(--bg-main);
   width: 350px;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: var(--radius-pill);
+  padding: var(--space-xs);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -417,31 +465,31 @@ body {
     border: none;
     padding: 10px 20px;
     flex: 1;
-    border-radius: 40px;
+    border-radius: var(--radius-pill);
     outline: none;
 }
 
 .input-box button {
-    background: #fff;
+    background: var(--color-white);
     border: 1px solid #e5e5e5;
     padding: 10px 18px;
-    border-radius: 40px;
+    border-radius: var(--radius-pill);
     cursor: pointer;
     font-size: 14px;
     transition: 0.2s;
 }
 
 .input-box button:hover {
-    background: #f3f3f3;
+    background: var(--color-black);
 }
 
 
 label.checkbox-final {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-sm);
   font-size: 0.85rem;
-  color: #ccc;
+  color: var(--text-muted);
   max-width: 500px;
   margin-bottom: 28px;
   cursor: pointer;
@@ -452,23 +500,23 @@ label.checkbox-final input[type="checkbox"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: #fff;
+  accent-color: var(--color-white);
 }
 
 label.checkbox-final a {
-  color: #bbb;
+  color: var(--text-muted);
   text-decoration: underline;
 }
 
 label.checkbox-final a:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .social-icons {
   display: flex;
-  gap: 18px;
-  margin-bottom: 50px;
-  margin-top: 10px;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  margin-top: var(--space-md);
 }
 
 .social-icons img {
@@ -493,8 +541,8 @@ label.checkbox-final a:hover {
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  color: rgb(243, 242, 242);
+  gap: var(--space-sm);
+  color: var(--color-white);
   margin-bottom: 10%;
   word-wrap: break-word;
   align-items: flex-start;
@@ -508,9 +556,9 @@ label.checkbox-final a:hover {
   
   .footer-headers {
     display: flex;
-    gap: 40px;
+    gap: var(--space-lg);
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: var(--space-md);
   }
   .footer-column {
     align-items: center;
@@ -521,9 +569,9 @@ label.checkbox-final a:hover {
     flex-direction: column; 
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--space-lg);
     padding: 30px 5%;
-    background-color: #f8f8f8; 
+    background-color: var(--bg-main); 
     text-align: center;
 }
 
@@ -533,7 +581,7 @@ label.checkbox-final a:hover {
     font-weight: 600;
     font-size: clamp(20px, 5vw, 36px); 
     line-height: 1.2;
-    color: #0a0a0a;
+    color: var(--text-main);
 }
 
 
@@ -541,7 +589,7 @@ label.checkbox-final a:hover {
     font-family: "Inter", sans-serif;
     font-size: clamp(12px, 3vw, 16px);
     font-weight: 600;
-    color: #080808;
+    color: var(--text-muted);
     opacity: 0.85;
     cursor: pointer;
     text-decoration: none;
@@ -557,7 +605,7 @@ label.checkbox-final a:hover {
     width: 100%;          
     max-width: 400px;     
     height: auto;         
-    border-radius: 10px;
+    border-radius: var(--radius-pill);
     object-fit: cover;
     box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
@@ -567,7 +615,7 @@ label.checkbox-final a:hover {
     .m3 {
         flex-direction: row; 
         justify-content: space-between;
-        gap: 40px;
+        gap: var(--space-xl);
         text-align: left;
     }
 
@@ -585,7 +633,7 @@ label.checkbox-final a:hover {
 
 
 .m4 {
-    background: #3c3c3c;    
+    background: var(--color-gray-500);    
     padding: 40px 8%;
     display: flex;
     justify-content: space-between;
@@ -593,8 +641,8 @@ label.checkbox-final a:hover {
 }
 
 .readytext {
-    color: #ffffff;
-    font-size: 14px;
+    color: var(--color-white);
+    font-size: var(--font-size-lg, 1.5rem);
     line-height: 1.5;
     opacity: 0.8;
     max-width: 500px;
@@ -602,13 +650,13 @@ label.checkbox-final a:hover {
 }
 
 .m4 button {
-    background: #ffffff;
-    color: #000;
+    background: var(--color-white);
+    color: var(--color-black);
     padding: 12px 28px;
-    border-radius: 30px;
+    border-radius: var(--radius-pill);
     border: none;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: var(--font-size-md, 1rem);
+    font-weight: var(--font-weight-semibold);
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: 0.2s ease;
@@ -624,7 +672,7 @@ label.checkbox-final a:hover {
   .m4 {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: var(--space-lg);
   }
 
   .readytext {
@@ -647,18 +695,18 @@ label.checkbox-final a:hover {
     width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--space-sm);
   }
 
   .input-box input {
     padding: 10px 14px;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
     width: 50%;
   }
 
   .input-box button {
     padding: 10px 14px;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
   }
 }
 
